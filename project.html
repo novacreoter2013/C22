@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Product and Trigonometry</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; padding: 20px; }
+        .result-box { background: #f4f4f4; padding: 15px; border-left: 5px solid #2ecc71; margin-bottom: 20px; }
+        h2 { color: #2c3e50; }
+    </style>
+</head>
+<body>
+
+    <h2>1. Product of Arguments</h2>
+    <div class="result-box">
+        <p id="product_result"></p>
+    </div>
+
+    <h2>2. Trigonometric Degrees</h2>
+    <div class="result-box">
+        <p id="trig_result"></p>
+    </div>
+
+    <script>
+        /* PART 1: PRODUCT OF ARGUMENTS 
+           Building on the 'findmax' logic from your file
+        */
+        function findProduct() {
+            var product = 1; // Initialize at 1 for multiplication
+            for (var i = 0; i < arguments.length; i++) {
+                product = product * arguments[i];
+            }
+            return product;
+        }
+
+        // Displaying the product of (5, 2, 10)
+        document.getElementById("product_result").innerHTML = 
+            "The product of (5, 2, 10) is: <b>" + findProduct(5, 2, 10) + "</b>";
+
+        /* PART 2: TRIGONOMETRIC CALCULATIONS
+           Expanding on Math methods like acos and asin
+        */
+        
+        // Function to convert degrees to radians
+        function toRadians(degrees) {
+            return degrees * (Math.PI / 180);
+        }
+
+        var degreeValue = 45;
+        var radians = toRadians(degreeValue);
+
+        // Calculating Sine and Cosine
+        var s = Math.sin(radians);
+        var c = Math.cos(radians);
+
+        document.getElementById("trig_result").innerHTML = 
+            "Value in Degrees: " + degreeValue + "°<br>" +
+            "Sine: " + s.toFixed(4) + "<br>" +
+            "Cosine: " + c.toFixed(4);
+
+    </script>
+</body>
+</html>
